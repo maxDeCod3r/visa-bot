@@ -10,6 +10,7 @@ import random
 import telebot
 from datetime import datetime
 from bot_secrets import Secrets
+import os
 # exit(0)
 
 logging.basicConfig(level=INFO)
@@ -214,7 +215,7 @@ class Main:
         chrome_options.add_argument("--window-position=10,11")
         # options.add_argument(f'--proxy-server={proxy_server_url}')
         driver = uc.Chrome(headless=False, use_subprocess=False, options=chrome_options)
-        driver.set_window_size(1001, 1002)
+        driver.set_window_size(1001, 1302)
         # clear_browsing_data(driver)
         agent = VisaBot(driver, Secrets())
         result = agent.run(driver)
@@ -227,6 +228,9 @@ class Main:
         info("Cycle done, sleeping for 5 seconds")
         time.sleep(5)
         driver.quit()
+        time.sleep(1)
+        print("Force killing Chrome.....")
+        os.system("taskkill /f /im chromedriver.exe /T")
 
     def run_loop(self):
         self.last_upd_time = time.time()
