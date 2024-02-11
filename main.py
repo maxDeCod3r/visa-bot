@@ -108,7 +108,7 @@ class VisaBot:
         pyautogui.mouseDown()
         time.sleep(0.2331)
         pyautogui.mouseUp()
-        time.sleep(10)
+        time.sleep(12)
 
         info("switching to new tab")
         driver.switch_to.window(driver.window_handles[-1])
