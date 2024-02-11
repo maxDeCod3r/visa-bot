@@ -1,0 +1,4 @@
+PyAutoGUI==0.9.54
+pyTelegramBotAPI==4.15.4
+selenium==4.17.2
+undetected_chromedriver==3.5.4
