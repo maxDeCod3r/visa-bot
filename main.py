@@ -231,6 +231,7 @@ class Main:
         time.sleep(1)
         print("Force killing Chrome.....")
         os.system("taskkill /f /im chromedriver.exe /T")
+        os.system("taskkill /f /im chrome.exe /T")
 
     def run_loop(self):
         self.last_upd_time = time.time()
