@@ -248,6 +248,7 @@ class Main:
                 results_str = ', '.join(self.results)
                 self.telegram.send_logs(results_str)
                 self.results = []
+                self.last_upd_time = time.time()
             info("Cycle completed, sleeping for 5 minutes")
             time.sleep(5*60)
 
